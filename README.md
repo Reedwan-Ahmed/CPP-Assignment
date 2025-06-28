@@ -2,8 +2,7 @@
 2nd Year C++ Course Final Assignment. Object Oriented Programming
 This is a simple Student Records Management System written in C++ using Object-Oriented Programming (OOP) principles. It allows input, storage, and processing of basic student information such as name, roll number, birthdate, gender, grades, and more. 
 
-FUll code:
----------
+### Entire code:
 
 ```markdown
 ```cpp
@@ -223,10 +222,6 @@ int main()
     cout << "Enter roll number to search: ";
     cin >> rollNumberToSearch;
     searchStudentByRollNumber(students, rollNumberToSearch);
-
-    return 0;
-}
-arch);
 
     return 0;
 }
