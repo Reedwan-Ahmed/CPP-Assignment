@@ -11,7 +11,7 @@ FUll code:
 
 using namespace std;
 
-//Structure to store date of birth
+// Structure to store date of birth
 struct DateOfBirth
 {
     int day;
@@ -19,7 +19,7 @@ struct DateOfBirth
     int year;
 };
 
-//Class representing individual students
+// Class representing individual students
 class Student
 {
 public:
@@ -29,7 +29,7 @@ public:
     string gender;
     vector<int> grades;
 
-//Input student information
+    // Input student information
     void inputStudentInfo()
     {
         cout << "Enter student name: ";
@@ -43,7 +43,7 @@ public:
         getline(cin, gender);
     }
 
-//Display student information
+    // Display student information
     void displayStudentInfo() const
     {
         cout << "Name: " << name << endl;
@@ -53,14 +53,14 @@ public:
         cout << "Gender: " << gender << endl;
     }
 
-//Input grades for courses
+    // Input grades for courses
     void inputGrades()
     {
         int numCourses;
         cout << "Enter number of courses: ";
         cin >> numCourses;
 
-for (int i = 0; i < numCourses; i++)
+        for (int i = 0; i < numCourses; i++)
         {
             int grade;
             cout << "Enter grade for course #" << i + 1 << ": ";
@@ -69,36 +69,36 @@ for (int i = 0; i < numCourses; i++)
         }
     }
 
-//Display GPA (Grade Point Average)
+    // Display GPA (Grade Point Average)
     void displayGPA() const
     {
         double total = 0;
 
-  for (int i = 0; i < grades.size(); i++)
+        for (int i = 0; i < grades.size(); i++)
         {
             total += grades[i];
         }
 
-  double gpa = grades.empty() ? 0 : total / grades.size();
+        double gpa = grades.empty() ? 0 : total / grades.size();
         cout << "GPA: " << gpa << endl;
     }
 
-//Check if the student is of legal age (above 18)
+    // Check if the student is of legal age (above 18)
     bool isLegalAge() const
     {
         return calculateAge() >= 18;
     }
 
 private:
-    //Calculate age based on birthdate and current year
+    // Calculate age based on birthdate and current year
     int calculateAge() const
     {
-        int currentYear = 2023; //Current year for example
+        int currentYear = 2023; // Current year for example
         return currentYear - birthDate.year;
     }
 };
 
-//Categorize students by gender
+// Categorize students by gender
 void categorizeStudents(const vector<Student>& students)
 {
     for (size_t i = 0; i < students.size(); i++)
@@ -119,31 +119,31 @@ void categorizeStudents(const vector<Student>& students)
     }
 }
 
-//Compare function for sorting students by name
+// Compare function for sorting students by name
 bool compareByName(const Student& a, const Student& b)
 {
     return a.name < b.name;
 }
 
-//Compare function for sorting students by roll number
+// Compare function for sorting students by roll number
 bool compareByRollNumber(const Student& a, const Student& b)
 {
     return a.rollNumber < b.rollNumber;
 }
 
-//Sort students by name
+// Sort students by name
 void sortStudentsByName(vector<Student>& students)
 {
     sort(students.begin(), students.end(), compareByName);
 }
 
-//Sort students by roll number
+// Sort students by roll number
 void sortStudentsByRollNumber(vector<Student>& students)
 {
     sort(students.begin(), students.end(), compareByRollNumber);
 }
 
-//Search for a student by roll number and display details
+// Search for a student by roll number and display details
 void searchStudentByRollNumber(const vector<Student>& students, int rollNumber)
 {
     for (size_t i = 0; i < students.size(); i++)
@@ -152,7 +152,7 @@ void searchStudentByRollNumber(const vector<Student>& students, int rollNumber)
         if (student.rollNumber == rollNumber)
         {
             student.displayStudentInfo();
-            return; //Exit the loop since the student is found
+            return; // Exit the loop since the student is found
         }
     }
     cout << "Student with roll number " << rollNumber << " not found." << endl;
@@ -162,12 +162,12 @@ int main()
 {
     vector<Student> students;
 
-  int numStudents;
+    int numStudents;
     cout << "Enter the number of students to register: ";
     cin >> numStudents;
     cin.ignore(); // Ignore newline left in buffer
 
-//Register students
+    // Register students
     for (int i = 0; i < numStudents; i++)
     {
         Student s;
@@ -176,26 +176,26 @@ int main()
         students.push_back(s);
     }
 
-//Display student information
+    // Display student information
     for (size_t i = 0; i < students.size(); i++)
     {
         cout << "Student #" << i + 1 << " details:" << endl;
         students[i].displayStudentInfo();
     }
 
-//Input grades
+    // Input grades
     for (size_t i = 0; i < students.size(); i++)
     {
         students[i].inputGrades();
     }
 
-//Display GPA
+    // Display GPA
     for (size_t i = 0; i < students.size(); i++)
     {
         students[i].displayGPA();
     }
 
-//Determine whether a student is of legal age
+    // Determine whether a student is of legal age
     for (size_t i = 0; i < students.size(); i++)
     {
         if (students[i].isLegalAge())
@@ -208,18 +208,18 @@ int main()
         }
     }
 
-//Categorize students by gender
+    // Categorize students by gender
     categorizeStudents(students);
 
-//Sort by name or roll number
+    // Sort by name or roll number
     sortStudentsByName(students);
     sortStudentsByRollNumber(students);
 
-//Search for a student by roll number
+    // Search for a student by roll number
     int rollNumberToSearch;
     cout << "Enter roll number to search: ";
     cin >> rollNumberToSearch;
     searchStudentByRollNumber(students, rollNumberToSearch);
 
-   return 0;
+    return 0;
 }
