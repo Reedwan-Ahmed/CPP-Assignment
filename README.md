@@ -5,10 +5,6 @@ This is a simple Student Records Management System written in C++ using Object-O
 FUll code:
 ---------
 
----
-
-### Your entire code formatted for GitHub README:
-
 ```markdown
 ```cpp
 #include <iostream>
