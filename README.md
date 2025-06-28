@@ -4,6 +4,13 @@ This is a simple Student Records Management System written in C++ using Object-O
 
 FUll code:
 ---------
+
+---
+
+### Your entire code formatted for GitHub README:
+
+```markdown
+```cpp
 #include <iostream>
 #include <string>
 #include <vector>
@@ -220,6 +227,10 @@ int main()
     cout << "Enter roll number to search: ";
     cin >> rollNumberToSearch;
     searchStudentByRollNumber(students, rollNumberToSearch);
+
+    return 0;
+}
+arch);
 
     return 0;
 }
